@@ -1,21 +1,21 @@
 <script>
-    let userInput = "";
+  let userInput = "";
 
-    let listOfUserInputs = [];
+  let listOfUserInputs = [];
 
-    function handleClick() {
-        listOfUserInputs.push(userInput);
-        alert(JSON.stringify(listOfUserInputs));
-    }
+  function handleClick() {
+    listOfUserInputs = [...listOfUserInputs, userInput];
+    alert(JSON.stringify(listOfUserInputs));
+  }
 </script>
 
 <div class="ourfancybackground">
-    <input bind:value={userInput} />
+  <input bind:value={userInput} />
 
-    {#if userInput !== ""}
-        <h1>You have entered {userInput}!</h1>
-        <button on:click={handleClick}> Add User Input </button>
-    {/if}
+  {#if userInput !== ""}
+    <h1>You have entered {userInput}!</h1>
+    <button on:click={handleClick}> Add User Input </button>
+  {/if}
 </div>
 
 overall we have collected the following user inputs:
@@ -24,11 +24,11 @@ overall we have collected the following user inputs:
 {listOfUserInputs.length}
 
 {#each listOfUserInputs as entry}
-    {entry}
+  {entry}
 {/each}
 
 <style>
-    .ourfancybackground {
-        background-color: blue;
-    }
+  .ourfancybackground {
+    background-color: blue;
+  }
 </style>
