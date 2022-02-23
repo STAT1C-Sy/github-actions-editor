@@ -1,4 +1,5 @@
 import { Router } from "https://deno.land/x/opine@2.1.1/mod.ts";
+import "https://deno.land/x/dotenv@v3.2.0/load.ts"; //load env
 import GHMarketPlaceCrawler from "./../classes/GHMarketPlaceCrawler.ts"
 
 const router = Router();

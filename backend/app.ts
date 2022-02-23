@@ -4,9 +4,9 @@ import Routes from './routes/routes.ts';
 
 const app = opine();
 
-app.use('/api/v1', Routes);
-
 const port = parseInt(Deno.env.get("PORT") as string);
+
+app.use('/api/v1', Routes);
 
 if(Number.isNaN(port)) {
     Deno.exit(1);
