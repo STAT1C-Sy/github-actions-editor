@@ -1,12 +1,13 @@
 <script>
-  export let name;
 </script>
 
-<h1>Hello {name}!</h1>
-<p>
-  Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how
-  to build Svelte apps.
-</p>
+<div class="container">
+  <h1>Hello!</h1>
+  <p>
+    <a href="http://localhost:3002/api/v1/login">Sign in with Github</a>
+  </p>
+</div>
+
 
 <link
   href="https://fonts.googleapis.com/css?family=Overpass:100,400"

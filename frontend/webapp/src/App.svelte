@@ -1,30 +1,19 @@
 <script>
-  import Home from "@/components/Home.svelte";
-  import UserInput from "@/components/UserInput.svelte";
+  import Routes from "@/components/Routes.svelte"
   import { fade } from "svelte/transition";
 
-  let name = "";
+  let location = window.location.pathname;
+
 </script>
 
+<svelte:head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</svelte:head>
+
 <main transition:fade>
-  <Home {name} />
-
-  <p><br /></p>
-
-  <UserInput />
+  <Routes location={location}/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </main>
 
 <style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
 </style>
