@@ -14,19 +14,7 @@ router.get("/login", (_req, res) => {
     // Exchange the authorization code for an access token
     const tokens = await OAuth2Client.code.getToken(req.originalUrl);
   
-    // Use the access token to make an authenticated API request
-    const userResponse = await fetch("https://api.github.com/user", {
-      headers: {
-        Authorization: `Bearer ${tokens.accessToken}`,
-      },
-    });
-    const { name } = await userResponse.json();
-  
-    res.send(`Hello, ${name}!`);
+    res.redirect(req.baseUrl + `/dashboard?token=${tokens.accessToken}`);
   });
-
-router.get('/account', ()=>{
-
-});
 
 export default router;
